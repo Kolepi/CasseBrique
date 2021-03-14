@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasseBrique</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+
+    <script>
+    var canvas= document.getElementById("myCanvas"); // On chope l'élement grâce à l'idée myCanvas
+    var ctx = canvas.getContext("2d"); // Le contexte est un jeu 2D
+
+    //carré rouge
+    ctx.beginPath(); //Début instruction
+    ctx.rect(20, 40, 50, 50); //.rect pour définir un rectangle : valeur1 et valeur2 = coordonnées du coin supérieur gauche du rectangle, valeur3 et valeur4 = largeur et hauteur du rectangle
+    ctx.fillStyle = "#FF0000"; //code couleur de notre rectangle
+    ctx.fill(); // application de notre code couleur
+    ctx.closePath(); //fin instruction
+
+    //cercle
+    ctx.beginPath();
+    ctx.arc(240, 160, 20, 0, Math.PI*2, false); // arc pour faire un cercle : valeur 1 et 2 : x et y du centre de l'arc, valeur 3 : rayon de l'arc, valeur 4 et valeur 5 : angle de départ et de fin, direction du cercle : false = aiguille d'une montre, true = sens inverse
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.closePath();
+
+    //rectangle bleu
+    ctx.beginPath();
+    ctx.rect(160, 10, 100, 40);
+    ctx.strokeStyle = "rgba(0, 0, 255, 0.5)"; //Stroke pour ne faire que les contours et pas remplir notre figure
+    ctx.stroke();
+    ctx.closePath();
+    </script>
+    
+</body>
+</html>
